@@ -21,8 +21,6 @@ const Buttons: FC<any> = (rec) => {
     await ContactApi.deleteContact(rec.rec.id);
 
     deleteOpenModal();
-
-    dispatch(deleteContact(rec.rec.id));
   };
 
   return (

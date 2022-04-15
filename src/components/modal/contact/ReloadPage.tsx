@@ -16,7 +16,10 @@ const ReloadPage: FC<ReloadPageTypes> = ({ hideModal, isModalOpened }) => {
     <ModalWrapper hideModal={hideModal} isModalOpened={isModalOpened}>
       <Typography.Title level={2}>Успех</Typography.Title>
 
-      <p>Контакт удален. Пожалуйста, перезагрузите страницу!</p>
+      <p>
+        Контакт удален. Пожалуйста, перезагрузите страницу для применения
+        изменений!
+      </p>
 
       <Button type={"primary"} onClick={handleClick}>
         Перезарузить

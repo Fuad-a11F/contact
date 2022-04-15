@@ -1,4 +1,5 @@
 import Buttons from "../components/contact/Buttons";
+import { Contact } from "../shared/types/contant";
 
 export const columns = [
   {
@@ -19,6 +20,6 @@ export const columns = [
   {
     title: "Дейстивя",
     key: "operation",
-    render: (_: any, rec: any) => <Buttons rec={rec} />,
+    render: (_: any, rec: Contact) => <Buttons rec={rec} />,
   },
 ];

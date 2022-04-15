@@ -34,23 +34,14 @@
       "login": "qweqweqwe",
       "password": "qwewqeee",
       "id": 10
+    },
+    {
+      "login": "qwe",
+      "password": "11111111",
+      "id": 11
     }
   ],
   "contact": [
-    {
-      "number": "sdf",
-      "name": "sdfsdf",
-      "lastname": "Не указано",
-      "userId": "2",
-      "id": 10
-    },
-    {
-      "number": "sdf",
-      "name": "sdfs",
-      "lastname": "Не указано",
-      "userId": "2",
-      "id": 15
-    },
     {
       "number": "sdf324",
       "name": "sdfs",
