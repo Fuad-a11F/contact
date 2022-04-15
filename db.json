@@ -1,0 +1,104 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "json-server",
+      "password": "typicode"
+    },
+    {
+      "login": "yu",
+      "password": "yu",
+      "id": 2
+    },
+    {
+      "login": "ssdf",
+      "password": "sdf",
+      "id": 6
+    },
+    {
+      "login": "ываываыв",
+      "password": "ываы",
+      "id": 7
+    },
+    {
+      "login": "qq",
+      "password": "qq",
+      "id": 8
+    },
+    {
+      "login": "qweqweqwe",
+      "password": "wqe",
+      "id": 9
+    },
+    {
+      "login": "qweqweqwe",
+      "password": "qwewqeee",
+      "id": 10
+    }
+  ],
+  "contact": [
+    {
+      "number": "sdf",
+      "name": "sdfsdf",
+      "lastname": "Не указано",
+      "userId": "2",
+      "id": 10
+    },
+    {
+      "number": "sdf",
+      "name": "sdfs",
+      "lastname": "Не указано",
+      "userId": "2",
+      "id": 15
+    },
+    {
+      "number": "sdf324",
+      "name": "sdfs",
+      "lastname": "Не указано",
+      "id": 16,
+      "userId": "2"
+    },
+    {
+      "number": "sdf",
+      "name": "sdfs",
+      "lastname": "Не указано",
+      "userId": "2",
+      "id": 17
+    },
+    {
+      "number": "sdf",
+      "name": "sdfs",
+      "lastname": "Не указано",
+      "userId": "2",
+      "id": 18
+    },
+    {
+      "number": "sdf",
+      "name": "sdfs",
+      "lastname": "Не указано",
+      "userId": "2",
+      "id": 19
+    },
+    {
+      "number": "sdf",
+      "name": "sdfs",
+      "lastname": "Не указано",
+      "userId": "2",
+      "id": 20
+    },
+    {
+      "number": "sdf",
+      "name": "sdfs",
+      "lastname": "Не указано",
+      "userId": "2",
+      "id": 21
+    },
+    {
+      "number": "sdf",
+      "name": "sdfs",
+      "lastname": "Не указано",
+      "userId": "2",
+      "id": 23
+    }
+  ]
+}

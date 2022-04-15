@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+
+.input {
+    width: 300px;
+}
+
+.header span {
+    font-size: 18px;
+}
