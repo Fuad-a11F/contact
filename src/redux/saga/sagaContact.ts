@@ -1,10 +1,10 @@
 import { call, takeEvery, put } from "redux-saga/effects";
 import { AxiosResponse } from "axios";
 
-import { getContact } from "./ContactSlice";
+import { getContact } from "../ContactSlice";
 import { sagaActions } from "./sagaAction";
-import { ContactApi } from "../shared/api/contactApi";
-import { ContactTypes } from "../shared/types/contant";
+import { ContactApi } from "../../shared/api/contactApi";
+import { ContactTypes } from "../../shared/types/contant";
 
 function* fetchContact() {
   const contact: AxiosResponse<ContactTypes[]> = yield call(() =>

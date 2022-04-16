@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input } from "antd";
+import { Input } from "antd";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./Header.module.css";
@@ -8,9 +8,11 @@ import {
   useAppSelector,
 } from "../../shared/custom-hooks/redux";
 import { clearSearchContact, searchContact } from "../../redux/ContactSlice";
+import { LogoutOutlined } from "@ant-design/icons";
 
 const Header = () => {
   const contact = useAppSelector((state) => state.ContactReducer.contact);
+  const user = useAppSelector((state) => state.AuthReducer.user);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -43,7 +45,9 @@ const Header = () => {
         />
       </div>
 
-      <Button onClick={handleClick}>Выйти</Button>
+      {user && <div>Добро пожаловать, {user.login}</div>}
+
+      <LogoutOutlined className={styles.logout} onClick={handleClick} />
     </div>
   );
 };

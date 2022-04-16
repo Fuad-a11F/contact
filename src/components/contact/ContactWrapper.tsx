@@ -9,7 +9,7 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "../../shared/custom-hooks/redux";
-import { sagaActions } from "../../redux/sagaAction";
+import { sagaActions } from "../../redux/saga/sagaAction";
 
 const ContactWrapper = () => {
   const { isModalOpened, hideModal, openModal } = useModal();

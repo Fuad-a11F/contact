@@ -3,7 +3,8 @@ import createSagaMiddleware from "redux-saga";
 
 import AuthReducer from "./AuthSlice";
 import ContactReducer from "./ContactSlice";
-import getContactSaga from "./saga";
+import getContactSaga from "./saga/sagaContact";
+import getUserSaga from "./saga/sagaUser";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -18,6 +19,7 @@ export const store = configureStore({
 });
 
 sagaMiddleware.run(getContactSaga);
+sagaMiddleware.run(getUserSaga);
 
 export type RootState = ReturnType<typeof store.getState>;
 
