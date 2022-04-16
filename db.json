@@ -28,28 +28,20 @@
   ],
   "contact": [
     {
-      "number": "23123",
-      "name": "123werwe",
-      "lastname": "Не указано",
-      "id": 4,
-      "userId": "2",
-      "key": 1650084588126
-    },
-    {
-      "number": "3",
-      "name": "3qwe",
-      "lastname": "Не ewqe",
-      "id": 6,
-      "userId": "2",
-      "key": 1650084652617
-    },
-    {
       "number": "dasdasda",
       "name": "asasd",
       "lastname": "sdasd",
       "id": 8,
       "userId": "8",
       "key": 1650084672948
+    },
+    {
+      "number": "werwe3",
+      "name": "rwerwe",
+      "lastname": "Не указано",
+      "id": 10,
+      "userId": "2",
+      "key": 1650084787409
     }
   ]
 }

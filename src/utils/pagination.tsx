@@ -20,6 +20,6 @@ export const columns = [
   {
     title: "Дейстивя",
     key: "operation",
-    render: (_: any, rec: Contact) => <Buttons rec={rec} />,
+    render: (rec: Contact) => <Buttons rec={rec} />,
   },
 ];
