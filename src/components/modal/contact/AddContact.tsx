@@ -16,7 +16,7 @@ interface AddContactProps {
 }
 
 const AddContact: FC<AddContactProps> = ({ hideModal, isModalOpened }) => {
-  const { control, handleSubmit } = useForm({
+  const { control, handleSubmit, reset } = useForm({
     defaultValues: {
       number: "",
       name: "",
@@ -36,10 +36,15 @@ const AddContact: FC<AddContactProps> = ({ hideModal, isModalOpened }) => {
     openNotification("Успех", "Контакт добавлен!");
 
     hideModal();
+    reset();
   };
 
   return (
-    <ModalWrapper hideModal={hideModal} isModalOpened={isModalOpened}>
+    <ModalWrapper
+      hideModal={hideModal}
+      isModalOpened={isModalOpened}
+      reset={reset}
+    >
       <Typography.Title level={2}>Добавить</Typography.Title>
 
       <form onSubmit={handleSubmit(onSubmit)}>

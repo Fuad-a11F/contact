@@ -10,4 +10,5 @@ export interface ContactTypes {
   number: string;
   id: string;
   userId?: string;
+  key?: number;
 }

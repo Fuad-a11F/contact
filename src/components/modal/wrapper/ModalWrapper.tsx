@@ -6,16 +6,22 @@ export type ModalWrapperProps = {
   hideModal: Function;
   isModalOpened: boolean;
   children: ReactNode;
+  reset?: Function;
 };
 
 const ModalWrapper: FC<ModalWrapperProps> = ({
   children,
   hideModal,
   isModalOpened,
+  reset,
 }) => {
   const hideModalPanel = () => {
     if (hideModal) {
       hideModal();
+    }
+
+    if (reset) {
+      reset();
     }
   };
 

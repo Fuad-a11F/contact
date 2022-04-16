@@ -7,6 +7,7 @@ export const ContactApi = {
     return await axios.post("http://localhost:5000/contact", {
       ...data,
       userId: localStorage.getItem("id"),
+      key: Date.now(),
     });
   },
 
@@ -19,7 +20,6 @@ export const ContactApi = {
   },
 
   updateContact: async (date: ContactTypes) => {
-    console.log(date);
     return await axios.put(`http://localhost:5000/contact/${date.id}`, {
       ...date,
     });

@@ -8,42 +8,40 @@ import { ContactApi } from "../../../shared/api/contactApi";
 import { useAppDispatch } from "../../../shared/custom-hooks/redux";
 import { updateContact } from "../../../redux/ContactSlice";
 import { openNotification } from "../../Notifications";
+import { ContactTypes } from "../../../shared/types/contant";
 
 interface AdEditContactProps {
   hideModal: Function;
   isModalOpened: boolean;
-  number: string;
-  id: string;
-  name: string;
-  lastname?: string;
-  userId?: string;
+  contact: ContactTypes;
 }
 
 const EditContact: FC<AdEditContactProps> = ({
   hideModal,
   isModalOpened,
-  name,
-  lastname,
-  number,
-  id,
-  userId,
+  contact,
 }) => {
-  const { control, handleSubmit } = useForm({
+  const { control, handleSubmit, reset } = useForm({
     defaultValues: {
-      number,
-      name,
-      lastname,
-      id,
-      userId,
+      number: contact.number,
+      name: contact.name,
+      lastname: contact.lastname,
+      id: contact.id,
+      userId: contact.userId,
+      key: contact.key,
     },
   });
 
   const dispatch = useAppDispatch();
 
   const onSubmit = async (data: any) => {
-    const contact: any = await ContactApi.updateContact({ ...data, userId });
+    const updated_contact: any = await ContactApi.updateContact({
+      ...data,
+      userId: contact.userId,
+      key: contact.key,
+    });
 
-    dispatch(updateContact(contact.data));
+    dispatch(updateContact(updated_contact.data));
 
     openNotification("Успех", "Контакт обновлен!");
 
@@ -51,7 +49,11 @@ const EditContact: FC<AdEditContactProps> = ({
   };
 
   return (
-    <ModalWrapper hideModal={hideModal} isModalOpened={isModalOpened}>
+    <ModalWrapper
+      hideModal={hideModal}
+      isModalOpened={isModalOpened}
+      reset={reset}
+    >
       <Typography.Title level={2}>Редактировать</Typography.Title>
 
       <form onSubmit={handleSubmit(onSubmit)}>
