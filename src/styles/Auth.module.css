@@ -1,7 +1,16 @@
 .row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+
+}
+
+@media (max-width: 700px) {
+    .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

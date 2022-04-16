@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <div className={styles.header}>
-      <div>
+      <div className={styles.count}>
         <span>Общее количество: </span>
 
         {contact && <span>{contact?.length ?? "0"}</span>}
