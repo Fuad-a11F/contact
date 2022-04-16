@@ -29,14 +29,16 @@ const AddContact: FC<AddContactProps> = ({ hideModal, isModalOpened }) => {
   const onSubmit = async (data: Contact) => {
     data.lastname = data.lastname ? data.lastname : "Не указано";
 
-    const contact: ContactData = await ContactApi.addContact(data);
+    const contact: ContactData | undefined = await ContactApi.addContact(data);
 
-    dispatch(addContact(contact.data));
+    if (contact) {
+      dispatch(addContact(contact.data));
 
-    openNotification("Успех", "Контакт добавлен!");
+      openNotification("Успех", "Контакт добавлен!");
 
-    hideModal();
-    reset();
+      hideModal();
+      reset();
+    }
   };
 
   return (

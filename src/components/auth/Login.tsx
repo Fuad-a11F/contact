@@ -23,18 +23,20 @@ const Login = () => {
   const dispatch = useAppDispatch();
 
   const onSubmit = async (data: Auth) => {
-    const user: ArrayUser = await AuthApi.login(data);
+    const user: ArrayUser | undefined = await AuthApi.login(data);
 
-    if (user.data.length !== 0) {
-      localStorage.setItem("id", user.data[0].id.toString());
+    if (user) {
+      if (user.data.length !== 0) {
+        localStorage.setItem("id", user.data[0].id.toString());
 
-      navigate("/contact");
+        navigate("/contact");
 
-      dispatch(getUser(user));
+        dispatch(getUser(user));
 
-      openNotification("Успех", "Вход успешен!");
-    } else {
-      openNotification("Ошибка", "Такой пользователь не найден!");
+        openNotification("Успех", "Вход успешен!");
+      } else {
+        openNotification("Ошибка", "Такой пользователь не найден!");
+      }
     }
   };
 

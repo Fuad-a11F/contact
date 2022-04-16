@@ -9,9 +9,7 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "../../shared/custom-hooks/redux";
-import { ContactApi } from "../../shared/api/contactApi";
-import { getContact } from "../../redux/ContactSlice";
-import { ContactsData } from "../../shared/types/contant";
+import { sagaActions } from "../../redux/sagaAction";
 
 const ContactWrapper = () => {
   const { isModalOpened, hideModal, openModal } = useModal();
@@ -19,11 +17,7 @@ const ContactWrapper = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    ContactApi.getContact(localStorage.getItem("id")!).then(
-      (contact: ContactsData) => {
-        dispatch(getContact(contact.data));
-      }
-    );
+    dispatch({ type: sagaActions.FETCH_CONTACT });
   }, [dispatch]);
 
   return (

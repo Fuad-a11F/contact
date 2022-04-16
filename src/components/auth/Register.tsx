@@ -33,15 +33,17 @@ const Register = () => {
       return;
     }
 
-    const user: User = await AuthApi.register(data);
+    const user: User | undefined = await AuthApi.register(data);
 
-    localStorage.setItem("id", user.data.id.toString());
+    if (user) {
+      localStorage.setItem("id", user.data.id.toString());
 
-    dispatch(getUserRegister(user));
+      dispatch(getUserRegister(user));
 
-    openNotification("Успех", "Пользователь успешно зарегистрирован!");
+      openNotification("Успех", "Пользователь успешно зарегистрирован!");
 
-    navigate("/contact");
+      navigate("/contact");
+    }
   };
 
   return (

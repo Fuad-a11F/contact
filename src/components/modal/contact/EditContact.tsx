@@ -35,17 +35,20 @@ const EditContact: FC<AdEditContactProps> = ({
   const dispatch = useAppDispatch();
 
   const onSubmit = async (data: ContactTypes) => {
-    const updated_contact: ContactData = await ContactApi.updateContact({
-      ...data,
-      userId: contact.userId,
-      key: contact.key,
-    });
+    const updated_contact: ContactData | undefined =
+      await ContactApi.updateContact({
+        ...data,
+        userId: contact.userId,
+        key: contact.key,
+      });
 
-    dispatch(updateContact(updated_contact.data));
+    if (updated_contact) {
+      dispatch(updateContact(updated_contact.data));
 
-    openNotification("Успех", "Контакт обновлен!");
+      openNotification("Успех", "Контакт обновлен!");
 
-    hideModal();
+      hideModal();
+    }
   };
 
   return (

@@ -14,9 +14,11 @@ const Contact: FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    AuthApi.getById(localStorage.getItem("id")!).then((user: ArrayUser) => {
-      dispatch(getUser(user));
-    });
+    AuthApi.getById(localStorage.getItem("id")!).then(
+      (user: ArrayUser | undefined) => {
+        if (user) dispatch(getUser(user));
+      }
+    );
   }, [dispatch]);
 
   return (
