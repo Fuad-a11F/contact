@@ -7,13 +7,14 @@ import { useCheckAuth } from "../shared/custom-hooks/useCheckAuth";
 import { AuthApi } from "../shared/api/authApi";
 import { useAppDispatch } from "../shared/custom-hooks/redux";
 import { getUser } from "../redux/AuthSlice";
+import { ArrayUser } from "../shared/types/user";
 
 const Contact: FC = () => {
   useCheckAuth();
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    AuthApi.getById(localStorage.getItem("id")!).then((user: any) => {
+    AuthApi.getById(localStorage.getItem("id")!).then((user: ArrayUser) => {
       dispatch(getUser(user));
     });
   }, [dispatch]);

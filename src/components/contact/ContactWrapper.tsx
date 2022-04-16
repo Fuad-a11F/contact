@@ -11,6 +11,7 @@ import {
 } from "../../shared/custom-hooks/redux";
 import { ContactApi } from "../../shared/api/contactApi";
 import { getContact } from "../../redux/ContactSlice";
+import { ContactsData } from "../../shared/types/contant";
 
 const ContactWrapper = () => {
   const { isModalOpened, hideModal, openModal } = useModal();
@@ -18,9 +19,11 @@ const ContactWrapper = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    ContactApi.getContact(localStorage.getItem("id")!).then((contact) => {
-      dispatch(getContact(contact.data));
-    });
+    ContactApi.getContact(localStorage.getItem("id")!).then(
+      (contact: ContactsData) => {
+        dispatch(getContact(contact.data));
+      }
+    );
   }, [dispatch]);
 
   return (

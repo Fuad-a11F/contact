@@ -8,7 +8,7 @@ import { ContactApi } from "../../../shared/api/contactApi";
 import { useAppDispatch } from "../../../shared/custom-hooks/redux";
 import { updateContact } from "../../../redux/ContactSlice";
 import { openNotification } from "../../Notifications";
-import { ContactTypes } from "../../../shared/types/contant";
+import { ContactData, ContactTypes } from "../../../shared/types/contant";
 
 interface AdEditContactProps {
   hideModal: Function;
@@ -34,8 +34,8 @@ const EditContact: FC<AdEditContactProps> = ({
 
   const dispatch = useAppDispatch();
 
-  const onSubmit = async (data: any) => {
-    const updated_contact: any = await ContactApi.updateContact({
+  const onSubmit = async (data: ContactTypes) => {
+    const updated_contact: ContactData = await ContactApi.updateContact({
       ...data,
       userId: contact.userId,
       key: contact.key,

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { User } from "../../shared/types/user";
 import { openNotification } from "../Notifications";
 import { useAppDispatch } from "../../shared/custom-hooks/redux";
-import { getUser } from "../../redux/AuthSlice";
+import { getUserRegister } from "../../redux/AuthSlice";
 
 const Register = () => {
   const { control, handleSubmit } = useForm({
@@ -37,7 +37,7 @@ const Register = () => {
 
     localStorage.setItem("id", user.data.id.toString());
 
-    dispatch(getUser(user.data));
+    dispatch(getUserRegister(user));
 
     openNotification("Успех", "Пользователь успешно зарегистрирован!");
 

@@ -2,7 +2,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { ContactTypes } from "../shared/types/contant";
 
-const initialState: any = {
+interface InitialStateTypes {
+  contact: ContactTypes[];
+  copy_contact: ContactTypes[];
+}
+
+const initialState: InitialStateTypes = {
   contact: [],
   copy_contact: [],
 };
@@ -11,11 +16,11 @@ export const ContactSlice = createSlice({
   name: "contact",
   initialState,
   reducers: {
-    addContact: (state, payload: PayloadAction<any>) => {
+    addContact: (state, payload: PayloadAction<ContactTypes>) => {
       state.contact.push(payload.payload);
     },
 
-    getContact: (state, payload: PayloadAction<any>) => {
+    getContact: (state, payload: PayloadAction<ContactTypes[]>) => {
       state.contact = payload.payload;
     },
 
@@ -25,7 +30,7 @@ export const ContactSlice = createSlice({
       );
     },
 
-    updateContact: (state, payload: PayloadAction<any>) => {
+    updateContact: (state, payload: PayloadAction<ContactTypes>) => {
       state.contact = state.contact.map((item: ContactTypes) => {
         if (item.id !== payload.payload.id) {
           return item;

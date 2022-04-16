@@ -30,7 +30,7 @@ const Login = () => {
 
       navigate("/contact");
 
-      dispatch(getUser(user.data[0]));
+      dispatch(getUser(user));
 
       openNotification("Успех", "Вход успешен!");
     } else {

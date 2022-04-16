@@ -12,3 +12,11 @@ export interface ContactTypes {
   userId?: string;
   key?: number;
 }
+
+export interface ContactData {
+  data: ContactTypes;
+}
+
+export interface ContactsData {
+  data: ContactTypes[];
+}

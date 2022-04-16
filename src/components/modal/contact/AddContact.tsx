@@ -4,7 +4,7 @@ import { Controller, useForm } from "react-hook-form";
 
 import styles from "./AddContact.module.css";
 import ModalWrapper from "../wrapper/ModalWrapper";
-import { Contact } from "../../../shared/types/contant";
+import { Contact, ContactData } from "../../../shared/types/contant";
 import { ContactApi } from "../../../shared/api/contactApi";
 import { useAppDispatch } from "../../../shared/custom-hooks/redux";
 import { addContact } from "../../../redux/ContactSlice";
@@ -29,7 +29,7 @@ const AddContact: FC<AddContactProps> = ({ hideModal, isModalOpened }) => {
   const onSubmit = async (data: Contact) => {
     data.lastname = data.lastname ? data.lastname : "Не указано";
 
-    const contact: any = await ContactApi.addContact(data);
+    const contact: ContactData = await ContactApi.addContact(data);
 
     dispatch(addContact(contact.data));
 
