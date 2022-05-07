@@ -14,5 +14,5 @@ export const useCheckAuth = (login: boolean = false) => {
         navigate("/");
       }
     }
-  }, [navigate]);
+  }, [navigate, login]);
 };
